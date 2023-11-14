@@ -1,0 +1,31 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="TeamProject.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                <h1 aria-readonly="True">Karate School</h1>
+            </asp:ContentPlaceHolder>
+        <asp:HyperLink ID="HyperLink2" runat="server">Home</asp:HyperLink>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:HyperLink ID="HyperLink3" runat="server">Login</asp:HyperLink>
+    </form>
+    <p>
+        &nbsp;</p>
+    <p>
+        &nbsp;</p>
+    <p>
+        &nbsp;</p>
+    <p>
+        &nbsp;</p>
+    <p>
+        Test Text</p>
+</body>
+</html>
