@@ -65,6 +65,7 @@
     <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
       <HintPath>packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
     </Reference>
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -90,6 +91,7 @@
   <ItemGroup>
     <Content Include=".gitattributes" />
     <Content Include=".gitignore" />
+    <Content Include="Administrator.aspx" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
     <Content Include="bin\roslyn\csc.exe" />
@@ -136,6 +138,7 @@
     <Content Include="database\KarateSchool%281%29.mdf" />
     <Content Include="Global.asax" />
     <Content Include="home.aspx" />
+    <Content Include="Instructor .aspx" />
     <Content Include="logon.aspx" />
     <Content Include="main.css" />
     <Content Include="obj\Debug\TeamProject.csproj.FileListAbsolute.txt" />
@@ -200,9 +203,17 @@
     <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\System.Xml.XPath.XDocument.dll" />
     <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\vbc.exe" />
     <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\VBCSCompiler.exe" />
+    <Content Include="UpgradeLog.htm" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Administrator.aspx.cs">
+      <DependentUpon>Administrator.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrator.aspx.designer.cs">
+      <DependentUpon>Administrator.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -212,6 +223,18 @@
     </Compile>
     <Compile Include="home.aspx.designer.cs">
       <DependentUpon>home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Instructor .aspx.cs">
+      <DependentUpon>Instructor .aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Instructor .aspx.designer.cs">
+      <DependentUpon>Instructor .aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KarateSchool.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KarateSchool.dbml</DependentUpon>
     </Compile>
     <Compile Include="logon.aspx.cs">
       <DependentUpon>logon.aspx</DependentUpon>
@@ -247,6 +270,14 @@
     <Content Include="obj\Debug\TeamProject.csproj.AssemblyReference.cache" />
     <Content Include="obj\Debug\TeamProject.csproj.CopyComplete" />
     <Content Include="obj\Debug\TeamProject.csproj.CoreCompileInputs.cache" />
+    <Content Include="KarateSchool.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>KarateSchool.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="KarateSchool.dbml.layout">
+      <DependentUpon>KarateSchool.dbml</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <Content Include="Site1.Master" />
     <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\.signature.p7s" />
