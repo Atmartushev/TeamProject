@@ -90,6 +90,10 @@
   <ItemGroup>
     <Content Include=".gitattributes" />
     <Content Include=".gitignore" />
+    <Content Include="App_Data\KarateSchool%281%29 %281%29.mdf" />
+    <Content Include="App_Data\KarateSchool%281%29 %281%29_log.ldf">
+      <DependentUpon>KarateSchool%281%29 %281%29.mdf</DependentUpon>
+    </Content>
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
     <Content Include="bin\roslyn\csc.exe" />
@@ -290,7 +294,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Models\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
