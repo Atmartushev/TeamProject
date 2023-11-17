@@ -1,0 +1,19 @@
+﻿.navbar-brand {
+    font-family: sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: red !important;
+    text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+}
+
+.nav-link {
+    font-family: sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    color: red;
+    text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+}
+
+.navbar {
+    background-color: grey !important;
+}

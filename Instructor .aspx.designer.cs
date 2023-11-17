@@ -11,7 +11,7 @@ namespace TeamProject
 {
 
 
-    public partial class home
+    public partial class Instructor1
     {
     }
 }

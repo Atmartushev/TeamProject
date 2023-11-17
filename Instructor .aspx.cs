@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace TeamProject
 {
-    public partial class logon : System.Web.UI.Page
+    public partial class Instructor1 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
