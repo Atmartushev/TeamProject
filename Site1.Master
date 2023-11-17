@@ -2,30 +2,44 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
 <head runat="server">
-    <title></title>
+    <title>Karate School</title>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="main.css">
+
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                <h1 aria-readonly="True">Karate School</h1>
-            </asp:ContentPlaceHolder>
-        <asp:HyperLink ID="HyperLink2" runat="server">Home</asp:HyperLink>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:HyperLink ID="HyperLink3" runat="server">Login</asp:HyperLink>
+        <!-- Bootstrap Navigation Bar -->
+        <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand">Karate School</a>
+            <div class="navbar" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="home.aspx">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="logon.aspx">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Content -->
+
+    <!-- Bootstrap JS and Popper.js (required for Bootstrap JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            <p>
+                &nbsp;</p>
+        </asp:ContentPlaceHolder>
     </form>
-    <p>
-        &nbsp;</p>
-    <p>
-        &nbsp;</p>
-    <p>
-        &nbsp;</p>
-    <p>
-        &nbsp;</p>
-    <p>
-        Test Text</p>
-</body>
+
+    </body>
 </html>

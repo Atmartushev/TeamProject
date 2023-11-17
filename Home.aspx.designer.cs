@@ -11,7 +11,7 @@ namespace TeamProject
 {
 
 
-    public partial class Home
+    public partial class home
     {
     }
 }
