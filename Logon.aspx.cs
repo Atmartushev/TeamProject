@@ -37,32 +37,30 @@ namespace TeamProject
                 HttpContext.Current.Session["userType"] = myUser.UserType;
 
                 // Redirect based on user type
-                switch (HttpContext.Current.Session["userType"].ToString().Trim())
+                switch (HttpContext.Current.Session["userType"].ToString())
                 {
+
                     case "Member":
                         HttpContext.Current.Session["memberFirstName"] = $"{myUser.Member.MemberFirstName}";
                         HttpContext.Current.Session["memberLastName"] = $"{myUser.Member.MemberLastName}";
                         FormsAuthentication.RedirectFromLoginPage(HttpContext.Current.Session["UserName"].ToString(), true);
-                        Response.Redirect("~/Member/Member.aspx");
+                        Response.Redirect("~/MemberPage/MemberPage.aspx");
                         break;
                     case "Instructor":
                         HttpContext.Current.Session["instructorFirstName"] = $"{myUser.Instructor.InstructorFirstName}";
                         HttpContext.Current.Session["instructorLastName"] = $"{myUser.Instructor.InstructorLastName}";
                         FormsAuthentication.RedirectFromLoginPage(HttpContext.Current.Session["UserName"].ToString(), true);
-                        Response.Redirect("~/Instructor/Instructor.aspx");
+                        Response.Redirect("~/InstructorPage/InstructorPage.aspx");
                         break;
                     case "Administrator":
                         FormsAuthentication.RedirectFromLoginPage(HttpContext.Current.Session["UserName"].ToString(), true);
                         Response.Redirect("~/Administrator/Administrator.aspx"); // Replace with the actual page for instructors
                         break;
-                    default:
-                        Response.Redirect("Logon.aspx", true);
-                        break;
                 }
             }
             else
             {
-                Response.Redirect("Logon.aspx", true);
+                Response.Redirect("~/logon.aspx", true);
             }
         }
 

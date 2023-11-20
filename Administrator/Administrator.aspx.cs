@@ -24,7 +24,7 @@ namespace TeamProject.Administrator
                     Session.Abandon();
                     Session.Abandon();
                     FormsAuthentication.SignOut();
-                    Response.Redirect("Logon.aspx", true);
+                    Response.Redirect("logon.aspx", true);
                 }
 
             }
