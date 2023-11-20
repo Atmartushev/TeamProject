@@ -145,6 +145,7 @@
     <Content Include="Instructor .aspx" />
     <Content Include="logon.aspx" />
     <Content Include="main.css" />
+    <Content Include="Member.aspx" />
     <Content Include="obj\Debug\TeamProject.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\TeamProject.dll" />
     <Content Include="obj\Debug\TeamProject.pdb" />
@@ -246,6 +247,13 @@
     </Compile>
     <Compile Include="logon.aspx.designer.cs">
       <DependentUpon>logon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member.aspx.cs">
+      <DependentUpon>Member.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member.aspx.designer.cs">
+      <DependentUpon>Member.aspx</DependentUpon>
     </Compile>
     <Compile Include="obj\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
