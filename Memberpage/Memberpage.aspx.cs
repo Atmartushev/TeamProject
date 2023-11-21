@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.Linq;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Web;
 using System.Web.Security;
 using System.Web.UI;
@@ -34,7 +35,8 @@ namespace TeamProject
 
                     string userID = HttpContext.Current.Session["userID"].ToString().Trim();
 
-                    
+                    Label1.Text = HttpContext.Current.Session["memberFirstName"].ToString();
+                    Label2.Text = HttpContext.Current.Session["memberLastName"].ToString();
 
                     var MemberQuery = from member in dbcon.Members
                                           join user in dbcon.NetUsers on member.Member_UserID equals user.UserID

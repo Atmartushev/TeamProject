@@ -31,8 +31,9 @@ namespace TeamProject
                     
                     string userID = HttpContext.Current.Session["userID"].ToString().Trim();
 
-                    LoginName1 = ;
-                    
+                    Label1.Text = HttpContext.Current.Session["memberFirstName"].ToString();
+                    Label2.Text = HttpContext.Current.Session["memberLastName"].ToString();
+
 
                     var InstructorQuery = from inst in dbcon.Instructors
                                       join user in dbcon.NetUsers on inst.InstructorID equals user.UserID

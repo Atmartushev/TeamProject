@@ -5,10 +5,11 @@
     <p>
         Hi,&nbsp;&nbsp;
         <asp:LoginName ID="LoginName1" runat="server" />
-    &nbsp;</p>
+    </p>
     <p>
-        Name :
         <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+&nbsp;&nbsp;&nbsp;
+        <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
     </p>
     <p>
         <asp:LoginStatus ID="LoginStatus1" runat="server" />
