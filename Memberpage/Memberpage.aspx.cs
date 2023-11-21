@@ -1,20 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data.Linq;
-using System.Drawing;
+using System.Configuration;
 using System.Linq;
-using System.Reflection.Emit;
 using System.Web;
 using System.Web.Security;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace TeamProject
 {
     public partial class Member1 : System.Web.UI.Page
     {
         KarateSchoolDataContext dbcon;
-        string conn = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\zjude\\Source\\Repos\\TeamProject\\App_Data\\KarateSchool(1).mdf;Integrated Security=True";
+        string conn = ConfigurationManager.ConnectionStrings["KarateSchoolDB"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
             dbcon = new KarateSchoolDataContext(conn);
@@ -28,7 +23,7 @@ namespace TeamProject
                     Session.Abandon();
                     Session.Abandon();
                     FormsAuthentication.SignOut();
-                    Response.Redirect("logon.aspx", true);
+                    Response.Redirect("~/logon.aspx", true);
                 }
                 else
                 {
@@ -39,16 +34,16 @@ namespace TeamProject
                     Label2.Text = HttpContext.Current.Session["memberLastName"].ToString();
 
                     var MemberQuery = from member in dbcon.Members
-                                          join user in dbcon.NetUsers on member.Member_UserID equals user.UserID
-                                          join section in dbcon.Sections on member.Member_UserID equals section.Member_ID  
+                                      join user in dbcon.NetUsers on member.Member_UserID equals user.UserID
+                                      join section in dbcon.Sections on member.Member_UserID equals section.Member_ID
                                       select new
-                                          {
-                                              SectionName = section.SectionName,
-                                              InstructorFirstName = member.MemberFirstName,
-                                              InstructorLastName = member.MemberLastName,
-                                              PaymentDate = section.SectionStartDate,
-                                              SectionFee = section.SectionFee
-                                          };
+                                      {
+                                          SectionName = section.SectionName,
+                                          InstructorFirstName = member.MemberFirstName,
+                                          InstructorLastName = member.MemberLastName,
+                                          PaymentDate = section.SectionStartDate,
+                                          SectionFee = section.SectionFee
+                                      };
 
 
 
@@ -56,6 +51,7 @@ namespace TeamProject
                     GridView1.DataBind();
                 }
             }
-            }
+        }
+
     }
 }

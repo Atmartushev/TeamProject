@@ -138,8 +138,10 @@
     <Content Include="database\KarateSchoolUpdate.mdf" />
     <Content Include="Global.asax" />
     <Content Include="home.aspx" />
+    <Content Include="Instructorpage\Instructorpage.aspx" />
     <Content Include="logon.aspx" />
     <Content Include="main.css" />
+    <Content Include="Memberpage\Memberpage.aspx" />
     <Content Include="obj\Debug\TeamProject.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\TeamProject.dll" />
     <Content Include="obj\Debug\TeamProject.pdb" />
@@ -223,6 +225,13 @@
     <Compile Include="home.aspx.designer.cs">
       <DependentUpon>home.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Instructorpage\Instructorpage.aspx.cs">
+      <DependentUpon>Instructorpage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Instructorpage\Instructorpage.aspx.designer.cs">
+      <DependentUpon>Instructorpage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="KarateSchool.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -232,8 +241,15 @@
       <DependentUpon>logon.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="logon.aspx.designer.cs">
+    <Compile Include="Logon.aspx.designer.cs">
       <DependentUpon>logon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Memberpage\Memberpage.aspx.cs">
+      <DependentUpon>Memberpage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Memberpage\Memberpage.aspx.designer.cs">
+      <DependentUpon>Memberpage.aspx</DependentUpon>
     </Compile>
     <Compile Include="obj\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -268,6 +284,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Administrator\Web.config" />
+    <Content Include="Instructorpage\Web.config" />
     <None Include="KarateSchool.dbml.layout">
       <DependentUpon>KarateSchool.dbml</DependentUpon>
     </None>

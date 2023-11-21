@@ -2,6 +2,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+        <asp:LoginStatus ID="LoginStatus1" runat="server" LogoutPageUrl="~/logon.aspx" LogoutAction="Redirect" />
+    <br />
     <p>
         Hi,&nbsp;&nbsp;
         <asp:LoginName ID="LoginName1" runat="server" />
@@ -12,8 +14,7 @@
         <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
     </p>
     <p>
-        <asp:LoginStatus ID="LoginStatus1" runat="server" />
-    </p>
+        &nbsp;</p>
     <p>
         &nbsp;</p>
     <p>

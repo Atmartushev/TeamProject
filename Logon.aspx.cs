@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Security;
 using System.Web.UI.WebControls;
+
 
 namespace TeamProject
 {
@@ -10,7 +12,8 @@ namespace TeamProject
     {
         KarateSchoolDataContext dataContext;
 
-        string conn = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\rggu97m\\ModernSoftware\\Assignment4\\TeamProject\\database\\KarateSchoolUpdate.mdf;Integrated Security=True;Connect Timeout=30";
+        string conn = ConfigurationManager.ConnectionStrings["KarateSchoolDB"].ConnectionString;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             dataContext = new KarateSchoolDataContext(conn);
@@ -45,13 +48,13 @@ namespace TeamProject
                         HttpContext.Current.Session["memberLastName"] = $"{myUser.Member.MemberLastName}";
                         FormsAuthentication.RedirectFromLoginPage(HttpContext.Current.Session["UserName"].ToString(), true);
 
-                        Response.Redirect("~/MemberPage/MemberPage.aspx");
+                        Response.Redirect("~/Memberpage/Memberpage.aspx");
                         break;
                     case "Instructor":
                         HttpContext.Current.Session["instructorFirstName"] = $"{myUser.Instructor.InstructorFirstName}";
                         HttpContext.Current.Session["instructorLastName"] = $"{myUser.Instructor.InstructorLastName}";
                         FormsAuthentication.RedirectFromLoginPage(HttpContext.Current.Session["UserName"].ToString(), true);
-                        Response.Redirect("~/InstructorPage/InstructorPage.aspx");
+                        Response.Redirect("~/Instructorpage/Instructorpage.aspx");
                         break;
                     case "Administrator":
                         FormsAuthentication.RedirectFromLoginPage(HttpContext.Current.Session["UserName"].ToString(), true);

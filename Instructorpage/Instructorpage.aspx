@@ -4,7 +4,8 @@
 
 <asp:Content ID="Content2" runat="server" contentplaceholderid="MainContent">
             <p>
-                &nbsp;</p>
+    <asp:LoginStatus ID="LoginStatus1" runat="server" LogoutAction="RedirectToLoginPage" LogoutPageUrl="~/logon.aspx" />
+            </p>
     <p>
                 Hi,&nbsp;&nbsp;
                 <asp:LoginName ID="LoginName1" runat="server" />
@@ -15,8 +16,7 @@
                 <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
     </p>
     <p>
-    <asp:LoginStatus ID="LoginStatus1" runat="server" />
-            </p>
+        &nbsp;</p>
     <p>
                 &nbsp;</p>
     <p>

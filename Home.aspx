@@ -4,7 +4,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <p>
-    </p>
+        Karate School Home Screen</p>
 
 </asp:Content>
 
