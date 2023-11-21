@@ -91,10 +91,10 @@
   <ItemGroup>
     <Content Include=".gitattributes" />
     <Content Include=".gitignore" />
-    <Content Include="Administrator.aspx" />
-    <Content Include="App_Data\KarateSchool%281%29 %281%29.mdf" />
-    <Content Include="App_Data\KarateSchool%281%29 %281%29_log.ldf">
-      <DependentUpon>KarateSchool%281%29 %281%29.mdf</DependentUpon>
+    <Content Include="Administrator\Administrator.aspx" />
+    <Content Include="App_Data\KarateSchool%281%29.mdf" />
+    <Content Include="App_Data\KarateSchool%281%29_log.ldf">
+      <DependentUpon>KarateSchool%281%29.mdf</DependentUpon>
     </Content>
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
@@ -139,13 +139,12 @@
     <Content Include="bin\roslyn\VBCSCompiler.exe" />
     <Content Include="bin\TeamProject.dll" />
     <Content Include="bin\TeamProject.pdb" />
-    <Content Include="database\KarateSchool%281%29.mdf" />
     <Content Include="Global.asax" />
     <Content Include="home.aspx" />
-    <Content Include="Instructor .aspx" />
+    <Content Include="Instructorpage\Instructorpage.aspx" />
     <Content Include="logon.aspx" />
     <Content Include="main.css" />
-    <Content Include="Member.aspx" />
+    <Content Include="Memberpage\Memberpage.aspx" />
     <Content Include="obj\Debug\TeamProject.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\TeamProject.dll" />
     <Content Include="obj\Debug\TeamProject.pdb" />
@@ -212,11 +211,11 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Administrator.aspx.cs">
+    <Compile Include="Administrator\Administrator.aspx.cs">
       <DependentUpon>Administrator.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Administrator.aspx.designer.cs">
+    <Compile Include="Administrator\Administrator.aspx.designer.cs">
       <DependentUpon>Administrator.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
@@ -229,12 +228,12 @@
     <Compile Include="home.aspx.designer.cs">
       <DependentUpon>home.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Instructor .aspx.cs">
-      <DependentUpon>Instructor .aspx</DependentUpon>
+    <Compile Include="Instructorpage\Instructorpage.aspx.cs">
+      <DependentUpon>Instructorpage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Instructor .aspx.designer.cs">
-      <DependentUpon>Instructor .aspx</DependentUpon>
+    <Compile Include="Instructorpage\Instructorpage.aspx.designer.cs">
+      <DependentUpon>Instructorpage.aspx</DependentUpon>
     </Compile>
     <Compile Include="KarateSchool.designer.cs">
       <AutoGen>True</AutoGen>
@@ -248,12 +247,12 @@
     <Compile Include="logon.aspx.designer.cs">
       <DependentUpon>logon.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Member.aspx.cs">
-      <DependentUpon>Member.aspx</DependentUpon>
+    <Compile Include="Memberpage\Memberpage.aspx.cs">
+      <DependentUpon>Memberpage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Member.aspx.designer.cs">
-      <DependentUpon>Member.aspx</DependentUpon>
+    <Compile Include="Memberpage\Memberpage.aspx.designer.cs">
+      <DependentUpon>Memberpage.aspx</DependentUpon>
     </Compile>
     <Compile Include="obj\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -282,14 +281,17 @@
     <Content Include="obj\Debug\TeamProject.csproj.AssemblyReference.cache" />
     <Content Include="obj\Debug\TeamProject.csproj.CopyComplete" />
     <Content Include="obj\Debug\TeamProject.csproj.CoreCompileInputs.cache" />
+    <Content Include="Administrator\Web.config" />
     <Content Include="KarateSchool.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>KarateSchool.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Instructorpage\Web.config" />
     <None Include="KarateSchool.dbml.layout">
       <DependentUpon>KarateSchool.dbml</DependentUpon>
     </None>
+    <Content Include="Memberpage\Web.config" />
     <None Include="packages.config" />
     <Content Include="Site1.Master" />
     <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\.signature.p7s" />
@@ -334,6 +336,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Database\" />
     <Folder Include="Models\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>

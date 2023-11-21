@@ -1,65 +1,74 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Security;
 using System.Web.UI;
+using System.Web.Security;
 using System.Web.UI.WebControls;
 
 namespace TeamProject
 {
     public partial class logon : System.Web.UI.Page
     {
+        KarateSchoolDataContext dataContext;
         
-            KarateSchoolDataContext dbcon;
-            string conn = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\zjude\\Source\\Repos\\TeamProject\\App_Data\\KarateSchool(1) (1).mdf\";Integrated Security=True";
+        string conn = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\zjude\\Source\\Repos\\TeamProject\\App_Data\\KarateSchool(1) (1).mdf\";Integrated Security=True";
             
         protected void Page_Load(object sender, EventArgs e)
         {
-            dbcon = new KarateSchoolDataContext(conn);
+            dataContext = new KarateSchoolDataContext(conn);
         }
+
 
         protected void Login1_Authenticate(object sender, AuthenticateEventArgs e)
         {
-            string nUserName = Login1.UserName;
-            string nPassword = Login1.Password;
+            string UserName = Login1.UserName;
+            string Password = Login1.Password;
 
-
-            HttpContext.Current.Session["nUserName"] = nUserName;
-            HttpContext.Current.Session["UserPassword"] = nPassword;
-
-
+            HttpContext.Current.Session["UserName"] = UserName;
+            HttpContext.Current.Session["Pass"] = Password;
 
             // Search for the current User, validate UserName and Password
-            NetUser myUser = (from x in dbcon.NetUsers
-                                    where x.UserName == HttpContext.Current.Session["nUserName"].ToString()
-                                    && x.UserPassword == HttpContext.Current.Session["uPass"].ToString()
-                                    select x).First();
+            NetUser myUser = (from x in dataContext.NetUsers
+                              where x.UserName == HttpContext.Current.Session["UserName"].ToString()
+                              && x.UserPassword == HttpContext.Current.Session["Pass"].ToString()
+                              select x).FirstOrDefault();
+
 
             if (myUser != null)
             {
-                //Add UserID and User type to the Session
-                HttpContext.Current.Session["UserID"] = myUser.UserID;
-                HttpContext.Current.Session["UserType"] = myUser.UserType;
+                // Add UserID and User type to the Session
+                HttpContext.Current.Session["userID"] = myUser.UserID;
+                HttpContext.Current.Session["userType"] = myUser.UserType;
 
-            }
-            if (myUser != null && HttpContext.Current.Session["userType"].ToString().Trim() == "student")
-            {
-
-                FormsAuthentication.RedirectFromLoginPage(HttpContext.Current.Session["nUserName"].ToString(), true);
-
-                Response.Redirect("~/StudentInfo/studentpage.aspx");
-            }
-            else if (myUser != null && HttpContext.Current.Session["userType"].ToString().Trim() == "advisor")
-            {
-
-                FormsAuthentication.RedirectFromLoginPage(HttpContext.Current.Session["nUserName"].ToString(), true);
-
-                Response.Redirect("~/AdvisorInfo/advisorpage.aspx");
+                // Redirect based on user type
+                switch (HttpContext.Current.Session["userType"].ToString().Trim())
+                {
+                    case "Member":
+                        HttpContext.Current.Session["memberFirstName"] = $"{myUser.Member.MemberFirstName}";
+                        HttpContext.Current.Session["memberLastName"] = $"{myUser.Member.MemberLastName}";
+                        FormsAuthentication.RedirectFromLoginPage(HttpContext.Current.Session["UserName"].ToString(), true);
+                        Response.Redirect("~/Memberpage/Memberpage.aspx");
+                        break;
+                    case "Instructor":
+                        HttpContext.Current.Session["instructorFirstName"] = $"{myUser.Instructor.InstructorFirstName}";
+                        HttpContext.Current.Session["instructorLastName"] = $"{myUser.Instructor.InstructorLastName}";
+                        FormsAuthentication.RedirectFromLoginPage(HttpContext.Current.Session["UserName"].ToString(), true);
+                        Response.Redirect("~/Instructorpage/Instructorpage.aspx");
+                        break;
+                    case "Administrator":
+                        FormsAuthentication.RedirectFromLoginPage(HttpContext.Current.Session["UserName"].ToString(), true);
+                        Response.Redirect("~/Administrator/Administrator.aspx"); // Replace with the actual page for instructors
+                        break;
+                }
             }
             else
-                Response.Redirect("Logon.aspx", true);
+            {
+                Response.Redirect("~/logon.aspx", true);
+            }
+                
 
         }
+
     }
 }

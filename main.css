@@ -17,3 +17,7 @@
 .navbar {
     background-color: grey !important;
 }
+
+.table {
+    border: none !important; /* Remove borders */
+}
