@@ -138,10 +138,8 @@
     <Content Include="database\KarateSchoolUpdate.mdf" />
     <Content Include="Global.asax" />
     <Content Include="home.aspx" />
-    <Content Include="InstructorPage\InstructorPage.aspx" />
     <Content Include="logon.aspx" />
     <Content Include="main.css" />
-    <Content Include="MemberPage\MemberPage.aspx" />
     <Content Include="obj\Debug\TeamProject.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\TeamProject.dll" />
     <Content Include="obj\Debug\TeamProject.pdb" />
@@ -225,13 +223,6 @@
     <Compile Include="home.aspx.designer.cs">
       <DependentUpon>home.aspx</DependentUpon>
     </Compile>
-    <Compile Include="InstructorPage\InstructorPage.aspx.cs">
-      <DependentUpon>InstructorPage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="InstructorPage\InstructorPage.aspx.designer.cs">
-      <DependentUpon>InstructorPage.aspx</DependentUpon>
-    </Compile>
     <Compile Include="KarateSchool.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -243,13 +234,6 @@
     </Compile>
     <Compile Include="logon.aspx.designer.cs">
       <DependentUpon>logon.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="MemberPage\MemberPage.aspx.cs">
-      <DependentUpon>MemberPage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MemberPage\MemberPage.aspx.designer.cs">
-      <DependentUpon>MemberPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="obj\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -287,7 +271,6 @@
     <None Include="KarateSchool.dbml.layout">
       <DependentUpon>KarateSchool.dbml</DependentUpon>
     </None>
-    <Content Include="MemberPage\Web.config" />
     <None Include="packages.config" />
     <Content Include="Site1.Master" />
     <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\.signature.p7s" />
