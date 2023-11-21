@@ -10,7 +10,7 @@ namespace TeamProject
     {
         KarateSchoolDataContext dataContext;
 
-        string conn = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\rggu97m\\ModernSoftware\\Assignment4\\TeamProject\\database\\KarateSchool(1).mdf;Integrated Security=True;Connect Timeout=30";
+        string conn = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\rggu97m\\ModernSoftware\\Assignment4\\TeamProject\\database\\KarateSchoolUpdate.mdf;Integrated Security=True;Connect Timeout=30";
         protected void Page_Load(object sender, EventArgs e)
         {
             dataContext = new KarateSchoolDataContext(conn);
@@ -44,6 +44,7 @@ namespace TeamProject
                         HttpContext.Current.Session["memberFirstName"] = $"{myUser.Member.MemberFirstName}";
                         HttpContext.Current.Session["memberLastName"] = $"{myUser.Member.MemberLastName}";
                         FormsAuthentication.RedirectFromLoginPage(HttpContext.Current.Session["UserName"].ToString(), true);
+
                         Response.Redirect("~/MemberPage/MemberPage.aspx");
                         break;
                     case "Instructor":

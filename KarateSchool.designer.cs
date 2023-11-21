@@ -22,7 +22,7 @@ namespace TeamProject
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="KarateSchool(1)")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="KarateSchoolUpdate")]
 	public partial class KarateSchoolDataContext : System.Data.Linq.DataContext
 	{
 		

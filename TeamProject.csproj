@@ -135,10 +135,7 @@
     <Content Include="bin\roslyn\VBCSCompiler.exe" />
     <Content Include="bin\TeamProject.dll" />
     <Content Include="bin\TeamProject.pdb" />
-    <Content Include="database\KarateSchool%281%29.mdf" />
-    <Content Include="database\KarateSchool%281%29_log.ldf">
-      <DependentUpon>KarateSchool%281%29.mdf</DependentUpon>
-    </Content>
+    <Content Include="database\KarateSchoolUpdate.mdf" />
     <Content Include="Global.asax" />
     <Content Include="home.aspx" />
     <Content Include="InstructorPage\InstructorPage.aspx" />
