@@ -92,10 +92,6 @@
     <Content Include=".gitattributes" />
     <Content Include=".gitignore" />
     <Content Include="Administrator\Administrator.aspx" />
-    <Content Include="App_Data\KarateSchool%281%29.mdf" />
-    <Content Include="App_Data\KarateSchool%281%29_log.ldf">
-      <DependentUpon>KarateSchool%281%29.mdf</DependentUpon>
-    </Content>
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
     <Content Include="bin\roslyn\csc.exe" />
@@ -139,11 +135,11 @@
     <Content Include="bin\roslyn\VBCSCompiler.exe" />
     <Content Include="bin\TeamProject.dll" />
     <Content Include="bin\TeamProject.pdb" />
+    <Content Include="database\KarateSchoolUpdate.mdf" />
     <Content Include="Global.asax" />
     <Content Include="home.aspx" />
-    <Content Include="Instructorpage\Instructorpage.aspx" />
+    <Content Include="logon.aspx" />
     <Content Include="main.css" />
-    <Content Include="Memberpage\Memberpage.aspx" />
     <Content Include="obj\Debug\TeamProject.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\TeamProject.dll" />
     <Content Include="obj\Debug\TeamProject.pdb" />
@@ -207,6 +203,7 @@
     <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\vbc.exe" />
     <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\VBCSCompiler.exe" />
     <Content Include="UpgradeLog.htm" />
+    <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Administrator\Administrator.aspx.cs">
@@ -226,19 +223,17 @@
     <Compile Include="home.aspx.designer.cs">
       <DependentUpon>home.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Instructorpage\Instructorpage.aspx.cs">
-      <DependentUpon>Instructorpage.aspx</DependentUpon>
+    <Compile Include="KarateSchool.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KarateSchool.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="logon.aspx.cs">
+      <DependentUpon>logon.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Instructorpage\Instructorpage.aspx.designer.cs">
-      <DependentUpon>Instructorpage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Memberpage\Memberpage.aspx.cs">
-      <DependentUpon>Memberpage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Memberpage\Memberpage.aspx.designer.cs">
-      <DependentUpon>Memberpage.aspx</DependentUpon>
+    <Compile Include="logon.aspx.designer.cs">
+      <DependentUpon>logon.aspx</DependentUpon>
     </Compile>
     <Compile Include="obj\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -267,9 +262,15 @@
     <Content Include="obj\Debug\TeamProject.csproj.AssemblyReference.cache" />
     <Content Include="obj\Debug\TeamProject.csproj.CopyComplete" />
     <Content Include="obj\Debug\TeamProject.csproj.CoreCompileInputs.cache" />
+    <Content Include="KarateSchool.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>KarateSchool.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Administrator\Web.config" />
-    <Content Include="Instructorpage\Web.config" />
-    <Content Include="Memberpage\Web.config" />
+    <None Include="KarateSchool.dbml.layout">
+      <DependentUpon>KarateSchool.dbml</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <Content Include="Site1.Master" />
     <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\.signature.p7s" />
@@ -306,9 +307,15 @@
     <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\vbc.exe.config" />
     <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\vbc.rsp" />
     <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\VBCSCompiler.exe.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Database\" />
+    <Folder Include="App_Data\" />
     <Folder Include="Models\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
